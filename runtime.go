@@ -95,8 +95,6 @@ func (rt *Runtime) TableStateUpdated(p psae.PSAE, ts *psae.TableState) {
 			return
 		}
 	}
-
-	return
 }
 
 func (rt *Runtime) TableBroken(p psae.PSAE, ts *psae.TableState) {

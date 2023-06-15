@@ -11,11 +11,13 @@ type SeatManager interface {
 }
 
 type seatManager struct {
+	api          ApiManager
 	competitions map[string]*Competition
 }
 
-func NewSeatManager() SeatManager {
+func NewSeatManager(api ApiManager) SeatManager {
 	return &seatManager{
+		api:          api,
 		competitions: make(map[string]*Competition),
 	}
 }
