@@ -175,6 +175,7 @@ func (rt *Runtime) PlayerReleased(p psae.PSAE, player *psae.Player) {
 		if err != nil {
 			return
 		}
+		return
 	}
 
 	// Join target table
