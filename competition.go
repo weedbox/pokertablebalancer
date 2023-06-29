@@ -1,6 +1,10 @@
 package pokertablebalancer
 
-import "github.com/weedbox/pokertablebalancer/psae"
+import (
+	"time"
+
+	"github.com/weedbox/pokertablebalancer/psae"
+)
 
 type Competition struct {
 	id      string
@@ -27,6 +31,7 @@ func NewCompetition(id string, sm *seatManager, g *psae.Game) *Competition {
 		psae.WithBackend(NewBackend(c)),
 		psae.WithRuntime(NewRuntime()),
 		psae.WithGame(g),
+		psae.WithWaitingRoom(psae.NewMemoryWaitingRoom(time.Second*2)),
 		//TODO: implement SeatMap with Redis
 		//TODO: implement WaitingRoom with Redis
 		//TODO: implement MatchQueue with JetStream
